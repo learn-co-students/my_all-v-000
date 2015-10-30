@@ -10,20 +10,20 @@
 Fork and clone this lab. You'll be coding your solution in `lib/my_all.rb`. If at any point you want to follow along with the example, you can put a `binding.pry` anywhere in the method and run `ruby bin/my_all` your terminal to pry around.
 
 ###Step 1
-We need to iterate through each element in the passed in collection using the simple lower level iterator `while`. Remember, since this is a lower level iterator, we will need to explicitly add a counter we'll call `i`, and increment it each time we go into the loop (`i=i+1`):
+We need to iterate through each element in the passed in collection using the simple lower level iterator `while`. Remember, since this is a lower level iterator, we will need to explicitly add a counter we'll call `i`, and increment it each time we go into the loop (`i = i + 1`):
 
 ```ruby
 def my_all?(collection)
   i = 0
   while i < collection.length
-    i = i + 1
+    i = i + 1   #i += 1 does the same thing. Use this if it's easier for you.
   end
 end
 ```
 
 
 ###Step 2
-For each element in the collection, you're going to `yield` to the block. This is a tough concept to grasp. Let's look at the code and break down what's happening.
+We're going to `yield` each element in the collection to the block. Let's look at the code and break down what's happening.
 
 ```ruby
 def my_all?(collection)
@@ -50,7 +50,7 @@ def my_all?([1,2,3])
   i = 0
   while i < 3
     yield(1)
-      i = 0 + 1
+    i = 0 + 1
   end
 end
 ```
@@ -93,7 +93,7 @@ Our `block_return_values` would look like this:
 ```ruby
 block_return_values = [true, false, false]
 ```
-Let's just add an `include?` method to determine the return value of the `my_all?` method. After we have the return value, we are all set. The final product will look like this:
+Let's just add an `#include?` method to determine the return value of the `my_all?` method. After we have the return value, we are all set. The final product will look like this:
 
 ```ruby
 def my_all?(collection)
