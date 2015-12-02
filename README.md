@@ -112,3 +112,5 @@ def my_all?(collection)
 end
 ```
 
+
+<a href='https://learn.co/lessons/my_all' data-visibility='hidden'>View this lesson on Learn.co</a>
