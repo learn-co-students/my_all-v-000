@@ -1,14 +1,15 @@
-def my_all(collection)
-  i=0
-  all = []
+def my_all?(collection)
+  i = 0
+  block_return_values = Array.new
   while i < collection.length
-    all << yield(collection[i])
-    i+=1
+    block_return_values << yield(collection[i])
+    i += 1
   end
 
-  if all.include? false
+  if block_return_values.include?(false)
     false
   else
     true
   end
+
 end
