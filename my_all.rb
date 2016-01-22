@@ -6,7 +6,7 @@ def my_all(collection)
     i+=1
   end
 
-  if all.include? false
+  if all.include?(false)
     false
   else
     true
