@@ -1,6 +1,6 @@
 require 'pry'
 #For what it's worth: I had identical code with different variable names and the cold
-#could not pass the test. Why!
+#could not pass the test. Why?!?
 def my_all?(collection)
   i = 0
   block_return_values = []
