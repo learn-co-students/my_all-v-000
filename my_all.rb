@@ -5,10 +5,11 @@ def my_all(collection)
     all << yield(collection[i])
     i+=1
   end
+  all
 
-  if all.include? false
-    false
+  if all.include? (false)
+    return false
   else
-    true
+    return true
   end
 end
