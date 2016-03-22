@@ -14,3 +14,4 @@ def my_all?(collection)
     true
   end
 end
+
