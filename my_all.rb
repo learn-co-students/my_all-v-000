@@ -5,8 +5,9 @@ def my_all(collection)
     all << yield(collection[i])
     i+=1
   end
+  return all
 
-  if all.include? false
+  if all.include?(false)
     false
   else
     true
