@@ -7,5 +7,5 @@ def my_all?(collection)
     vals_from_yield << yield(collection[i])
     i = i + 1
   end
-  vals_from_yield.all? 
+  vals_from_yield.all?
 end
