@@ -12,3 +12,5 @@ def my_all?(collection)
     true
   end
 end
+
+my_all?(collection) {|i| i < 2}
