@@ -7,7 +7,7 @@
 
 ##Code Along Exercise
 
-Fork and clone this lab. You'll be coding your solution in `lib/my_all.rb`. If at any point you want to follow along with the example, you can put a `binding.pry` anywhere in the method and run `ruby bin/my_all` your terminal to pry around.
+Fork and clone this lab. You'll be coding your solution in `lib/my_all.rb`. If at any point you want to follow along with the example, you can put a `binding.pry` anywhere in the method and run `ruby bin/my_all` in your terminal to pry around.
 
 ###Step 1
 We need to iterate through each element in the passed in collection using the simple lower level iterator `while`. Remember, since this is a lower level iterator, we will need to explicitly add a counter we'll call `i`, and increment it each time we go into the loop (`i = i + 1`):
@@ -114,3 +114,5 @@ end
 
 
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/my_all' title='Code Along: Building the all? method'>Code Along: Building the all? method</a> on Learn.co and start learning to code for free.</p>
+
+<p class='util--hide'>View <a href='https://learn.co/lessons/my_all'>My All? Lab</a> on Learn.co and start learning to code for free.</p>
