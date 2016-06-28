@@ -18,9 +18,8 @@ describe "#my_all?" do
 
   it "yields the correct element to the block" do
     yielded = []
-    my_all?(collection) do |number|
-      yielded.push number
-    end
+    my_all?(collection){|i| yielded << i}
+    
     expect(yielded).to eq([1,2,3])
   end
 
