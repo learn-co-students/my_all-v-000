@@ -1,3 +1,4 @@
+# This code is not used in the lab.
 def my_all(collection)
   i=0
   all = []
