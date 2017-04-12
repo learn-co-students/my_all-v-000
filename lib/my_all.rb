@@ -8,16 +8,14 @@ def my_all?(collection)
     i +=1
   end
   #this last bit of code can use any of these three below
-  block_return_values.include?(false) ? false : true
+  #block_return_values.include?(false) ? false : true
 
   #!block_return_values.include?(false)
 
-  #if block_return_values.include?(false)
-  #  false
-  #else
-  #  true
-  #end
-
-
+  if block_return_values.include?(false)
+    false
+  else
+    true
+  end
 
 end
