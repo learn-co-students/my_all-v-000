@@ -11,7 +11,3 @@ def my_all?(collection)
   end
   is_even
 end
-
-my_all?([2,1,3]) do |i|
-  i.even?
-end
