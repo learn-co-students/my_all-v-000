@@ -1,3 +1,10 @@
+#my_all?
+  # does not call on all?
+  # can handle an empty collection
+  # yields the correct element to the block
+  # returns false when the block condition is not met
+  # returns true when the block condition is met
+
 require 'pry'
 
 def my_all?(collection)
