@@ -1,4 +1,4 @@
-# Code Along: Building the `all?` method 
+# Code Along: Building the `all?` method
 
 ##Objectives
 * Continue to practice using yield and blocks
@@ -35,7 +35,7 @@ def my_all?(collection)
 end
 ```
 
-When this code is run and it hits the `yield` line, it is going to send whatever is passed in as the argument to the block. 
+When this code is run and it hits the `yield` line, it is going to send whatever is passed in as the argument to the block.
 
 *Note: If you are confused about where the block comes from, it becomes clearer after the method is called. Here's an example:*
 
@@ -64,7 +64,7 @@ my_all?([1,2,3]) {|1| 1 < 2}
 
 In this example, ruby will send `true` (the return value of the block) back to the `my_all?` method because `1 < 2` evaluates to `true`.
 
-###Step 3: Save the return value of the yield block 
+###Step 3: Save the return value of the yield block
 Since, we are looping through several elements in an array, what data structure can we use to store multiple values? An array! First, we'll declare our array before entering the `while` loop: `block_return_values = []`. Then, in the loop, let's shovel (`<<`) the return value of the block into the array: `block_return_values << yield(collection[i])`.
 
 ```ruby
@@ -79,7 +79,7 @@ end
 ```
 
 ###Step 4: Determine the return value of the method
-The return value of `all?` is simply `true` or `false`. If any element in the collection evaluates to false, then `all?` should return `false`. If they are all true, the method should return `true`. 
+The return value of `all?` is simply `true` or `false`. If any element in the collection evaluates to false, then `all?` should return `false`. If they are all true, the method should return `true`.
 
 Right now, we have access to an array of return values `block_return_values`. All we have to do now is determine whether the array contains any `false` elements.
 
@@ -103,7 +103,7 @@ def my_all?(collection)
     block_return_values << yield(collection[i])
     i = i + 1
   end
-  
+
   if block_return_values.include?(false)
     false
   else
