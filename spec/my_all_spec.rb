@@ -1,6 +1,6 @@
 require_relative 'spec_helper'
 require_relative '../lib/my_all.rb'
-
+ 
 describe "#my_all?" do
   let(:collection) { [1, 2, 3] }
 
