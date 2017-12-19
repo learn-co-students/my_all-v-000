@@ -16,6 +16,7 @@ def my_all?(collection)#iteration part
   #because the all? method returns true or false.
 
     if block_return_values.include?(false)
+      #don't forget to give include? the argument... AKA what you are searching for in the array
         false
       else
         true
