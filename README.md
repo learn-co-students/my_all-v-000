@@ -1,4 +1,4 @@
-# Code Along: Building the `all?` method 
+lear# Code Along: Building the `all?` method 
 
 ##Objectives
 * Continue to practice using yield and blocks
