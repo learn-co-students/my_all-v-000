@@ -1,7 +1,7 @@
 require 'pry'
 
 def my_all?(collection)
-  binding.pry
+  # binding.pry
   i = 0
   return_block_values = []
   while i < collection.length
