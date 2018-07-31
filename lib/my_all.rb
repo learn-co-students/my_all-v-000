@@ -1,12 +1,10 @@
-require 'pry'
-
-def my_all?(collection)
-  # counter for 'while' loop.
+def my_all?(list)
+  # counter
   i = 0;
-  block_return_values = []
-  while i < collection.length
-    block_return_values << yield(collection[i])
+  new_list = []
+  while i < list.size
+    new_list.push( yield(list[i]) )
     i += 1
   end
-    !block_return_values.include?(false)
+  !new_list.include?(false)
 end
