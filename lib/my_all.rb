@@ -1,4 +1,4 @@
-require 'pry'
+# require "pry"
 
 
 def my_all?(collection)
@@ -12,6 +12,6 @@ if block_return_values.include?(false)
   FALSE
 else
   TRUE
-  binding.pry
+  # binding.pry
 end
 end
