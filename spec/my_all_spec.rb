@@ -1,7 +1,7 @@
 require_relative 'spec_helper'
 require_relative '../lib/my_all.rb'
 
-puts describe "#my_all?" do
+ describe "#my_all?" do
   let(:collection) { [1, 2, 3] }
 
   it "does not call on all?" do
