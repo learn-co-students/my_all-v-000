@@ -1,16 +1,23 @@
-# Code Along: Building the `all?` method 
+# Code-Along: Building the `all?` method
 
-##Objectives
+## Objectives
+
 * Continue to practice using yield and blocks
 * Gain a deeper understanding of `#all?`
 
+## Code Along Exercise
 
-##Code Along Exercise
+Fork and clone this lab. You'll be coding your solution in `lib/my_all.rb`. If
+at any point you want to follow along with the example, you can put a
+`binding.pry` anywhere in the method and run `ruby bin/my_all` in your terminal
+to pry around.
 
-Fork and clone this lab. You'll be coding your solution in `lib/my_all.rb`. If at any point you want to follow along with the example, you can put a `binding.pry` anywhere in the method and run `ruby bin/my_all` in your terminal to pry around.
+### Step 1
 
-###Step 1
-We need to iterate through each element in the passed in collection using the simple lower level iterator `while`. Remember, since this is a lower level iterator, we will need to explicitly add a counter we'll call `i`, and increment it each time we go into the loop (`i = i + 1`):
+We need to iterate through each element in the passed in collection using the
+simple lower-level iterator `while`. Remember, since this is a lower level
+iterator, we will need to explicitly add a counter we'll call `i`, and increment
+it each time we go into the loop (`i = i + 1`):
 
 ```ruby
 def my_all?(collection)
@@ -21,9 +28,10 @@ def my_all?(collection)
 end
 ```
 
+### Step 2
 
-###Step 2
-We're going to `yield` each element in the collection to the block. Let's look at the code and break down what's happening.
+We're going to `yield` each element in the collection to the block. Let's look
+at the code and break down what's happening.
 
 ```ruby
 def my_all?(collection)
@@ -35,9 +43,11 @@ def my_all?(collection)
 end
 ```
 
-When this code is run and it hits the `yield` line, it is going to send whatever is passed in as the argument to the block. 
+When this code is run and it hits the `yield` line, it is going to send whatever
+is passed in as the argument to the block.
 
-*Note: If you are confused about where the block comes from, it becomes clearer after the method is called. Here's an example:*
+*Note: If you are confused about where the block comes from, it becomes clearer
+after the method is called. Here's an example:*
 
 ```ruby
 my_all?([1,2,3]) {|i| i < 2}
@@ -55,17 +65,24 @@ def my_all?([1,2,3])
 end
 ```
 
-When it hits the `yield(1)`, it is going to send `1` to the block, evaluate it, and send the return value back to `yield`:
+When it hits the `yield(1)`, it is going to send `1` to the block, evaluate it,
+and send the return value back to `yield`:
 
 ```ruby
 my_all?([1,2,3]) {|1| 1 < 2}
   #=> true
 ```
 
-In this example, ruby will send `true` (the return value of the block) back to the `my_all?` method because `1 < 2` evaluates to `true`.
+In this example, ruby will send `true` (the return value of the block) back to
+the `my_all?` method because `1 < 2` evaluates to `true`.
 
-###Step 3: Save the return value of the yield block 
-Since, we are looping through several elements in an array, what data structure can we use to store multiple values? An array! First, we'll declare our array before entering the `while` loop: `block_return_values = []`. Then, in the loop, let's shovel (`<<`) the return value of the block into the array: `block_return_values << yield(collection[i])`.
+### Step 3: Save the return value of the yield block
+
+Since we are looping through several elements in an array, what data structure
+can we use to store multiple values? An array! First, we'll declare our array
+before entering the `while` loop: `block_return_values = []`. Then, in the loop,
+let's shovel (`<<`) the return value of the block into the array:
+`block_return_values << yield(collection[i])`.
 
 ```ruby
 def my_all?(collection)
@@ -78,22 +95,31 @@ def my_all?(collection)
 end
 ```
 
-###Step 4: Determine the return value of the method
-The return value of `all?` is simply `true` or `false`. If any element in the collection evaluates to false, then `all?` should return `false`. If they are all true, the method should return `true`. 
+### Step 4: Determine the return value of the method
 
-Right now, we have access to an array of return values `block_return_values`. All we have to do now is determine whether the array contains any `false` elements.
+The return value of `all?` is simply `true` or `false`. If any element in the
+collection evaluates to false, then `all?` should return `false`. If they are
+all true, the method should return `true`.
+
+Right now, we have access to an array of return values `block_return_values`.
+All we have to do now is determine whether the array contains any `false`
+elements.
 
 Sticking with our previous example:
 
 ```ruby
 my_all?([1,2,3]) {|i| i < 2}
 ```
+
 Our `block_return_values` would look like this:
 
 ```ruby
 block_return_values = [true, false, false]
 ```
-Let's just add an `#include?` method to determine the return value of the `my_all?` method. After we have the return value, we are all set. The final product will look like this:
+
+Let's just add an `#include?` method to determine the return value of the
+`my_all?` method. After we have the return value, we are all set. The final
+product will look like this:
 
 ```ruby
 def my_all?(collection)
