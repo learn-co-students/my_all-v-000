@@ -1,17 +1,11 @@
 require 'pry'
 
 def my_all?(collection)
-  new_array = []
   i = 0
-
+  block_return_values = []
   while i < collection.length
-    new_array << yield(collection[i])
+    block_return_values << yield(collection[i])
     i += 1
-    end
-
-  if new_array.include?(false)
-    false
-  else
-    true
   end
+  block_return_values.include?(false)? false :true
 end

@@ -1,12 +1,4 @@
-require_relative "../lib/my_all.rb"
 
-def my_all(array)
-  new_array = []
-  i = 0
-  while i < array.length
-    new_array << yeild(array[i])
-    i += 1
-    end
-    
+require_relative "../lib/my_all.rb"
 
 my_all?([1,2,3]) {|i| i < 2}
