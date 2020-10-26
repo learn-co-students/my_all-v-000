@@ -138,4 +138,4 @@ def my_all?(collection)
 end
 ```
 
-<p data-visibility='hidden'>View <a href='https://learn.co/lessons/my_all' title='Code Along: Building the all? method'>Code Along: Building the all? method</a> on Learn.co and start learning to code for free.</p>
+
