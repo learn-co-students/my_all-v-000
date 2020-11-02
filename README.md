@@ -138,4 +138,21 @@ def my_all?(collection)
 end
 ```
 
+With the above code written, you should now be passing all 5 tests (5 examples, 0 failures).
 
+#### Gem Warning
+
+
+If you are passing all your tests, you might see the following warning message:
+
+```
+WARN: Unresolved or ambigious specs during Gem::Specification.reset:
+      diff-lcs (>= 1.2.0, < 2.0)
+      Available/installed versions of this gem:
+      - 1.4.3
+      - 1.3
+WARN: Clearing out unresolved specs. Try 'gem cleanup <gem>'
+Please report a bug if this causes problems.
+```
+
+This is OK. This warning is not important at the moment and nothing is wrong with your machine. If you're passing all the tests, you can submit your lesson and move on to the next one!
