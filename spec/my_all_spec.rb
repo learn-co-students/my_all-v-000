@@ -1,7 +1,7 @@
 require_relative 'spec_helper'
 require_relative '../lib/my_all.rb'
 
-describe "#my_all?" do
+ describe "#my_all?" do
   let(:collection) { [1, 2, 3] }
 
   it "does not call on all?" do
@@ -27,7 +27,7 @@ describe "#my_all?" do
   it "returns false when the block condition is not met" do
     expect(my_all?(collection) {|i| i < 3}).to eq(false)
   end
-  
+
   it "returns true when the block condition is met" do
     expect(my_all?(collection) {|i| i < 4}).to eq(true)
   end
